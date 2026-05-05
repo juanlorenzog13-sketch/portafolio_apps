@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Portafolio | Apps en Streamlit",
-    page_icon="◇",
+    page_icon="♡",
     layout="wide"
 )
 
@@ -251,6 +251,10 @@ CATEGORY_ORDER = ["Todas", "Visión", "Texto", "Dibujo", "Voz", "MQTT", "General
 
 st.markdown("""
 <style>
+    .stApp {
+        background: linear-gradient(180deg, #fff7fb 0%, #ffeef6 100%);
+    }
+
     .block-container {
         padding-top: 2rem;
         padding-bottom: 3rem;
@@ -259,16 +263,16 @@ st.markdown("""
 
     .hero {
         padding: 2rem;
-        border-radius: 24px;
-        background: linear-gradient(135deg, #0f172a 0%, #111827 45%, #1e293b 100%);
-        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 26px;
+        background: linear-gradient(135deg, #ffb7d5 0%, #f89ac2 45%, #e785b2 100%);
+        border: 1px solid rgba(180, 72, 122, 0.16);
         margin-bottom: 1.5rem;
-        box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+        box-shadow: 0 18px 40px rgba(191, 88, 139, 0.18);
     }
 
     .hero h1 {
         margin: 0;
-        color: white;
+        color: #5c1738;
         font-size: 2.5rem;
         font-weight: 800;
         letter-spacing: -0.02em;
@@ -276,7 +280,7 @@ st.markdown("""
 
     .hero p {
         margin-top: 0.8rem;
-        color: #cbd5e1;
+        color: #6b2245;
         font-size: 1.02rem;
         max-width: 760px;
         line-height: 1.6;
@@ -290,34 +294,35 @@ st.markdown("""
     }
 
     .mini-stat {
-        background: rgba(255,255,255,0.06);
-        color: #dbeafe;
-        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255, 255, 255, 0.55);
+        color: #6d2148;
+        border: 1px solid rgba(138, 42, 88, 0.12);
         padding: 0.55rem 0.9rem;
         border-radius: 999px;
         font-size: 0.9rem;
+        font-weight: 700;
     }
 
     .section-title {
-        color: #0f172a;
+        color: #7d1d4e;
         font-size: 1.35rem;
         font-weight: 800;
         margin: 1.8rem 0 0.8rem 0;
     }
 
     .card {
-        background: #111827;
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 20px;
+        background: #fff9fc;
+        border: 1px solid rgba(189, 107, 145, 0.18);
+        border-radius: 22px;
         padding: 1rem;
         min-height: 330px;
-        box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+        box-shadow: 0 10px 28px rgba(202, 122, 160, 0.14);
     }
 
     .card-title {
-        color: white;
+        color: #5b1738;
         font-size: 1.15rem;
-        font-weight: 700;
+        font-weight: 800;
         line-height: 1.35;
         margin-bottom: 0.45rem;
     }
@@ -326,26 +331,26 @@ st.markdown("""
         display: inline-block;
         padding: 0.25rem 0.7rem;
         border-radius: 999px;
-        background: #2563eb;
+        background: #d94f93;
         color: white;
         font-size: 0.78rem;
         margin-bottom: 0.9rem;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     .card-desc {
-        color: #cbd5e1;
-        font-size: 0.94rem;
+        color: #6d2b4d;
+        font-size: 0.95rem;
         line-height: 1.5;
         min-height: 72px;
     }
 
     .ascii-box {
-        background: #0b1220;
-        border: 1px solid rgba(255,255,255,0.08);
+        background: #fff0f7;
+        border: 1px solid rgba(217, 79, 147, 0.16);
         border-radius: 14px;
         padding: 0.85rem;
-        color: #93c5fd;
+        color: #b03573;
         font-family: monospace;
         font-size: 0.95rem;
         white-space: pre;
@@ -354,9 +359,52 @@ st.markdown("""
     }
 
     .results-note {
-        color: #334155;
-        font-weight: 600;
+        color: #8a2f5e;
+        font-weight: 700;
         margin-bottom: 1rem;
+    }
+
+    section[data-testid="stSidebar"] {
+        background: #fff4f9;
+        border-right: 1px solid rgba(196, 109, 150, 0.14);
+    }
+
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3,
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] div {
+        color: #6d2148;
+    }
+
+    .stTextInput input {
+        background-color: white !important;
+        color: #6d2148 !important;
+        border-radius: 12px !important;
+    }
+
+    div[data-baseweb="select"] > div {
+        background-color: white !important;
+        color: #6d2148 !important;
+        border-radius: 12px !important;
+    }
+
+    div[data-baseweb="select"] span {
+        color: #6d2148 !important;
+    }
+
+    .stLinkButton a {
+        background: linear-gradient(135deg, #e24d94 0%, #cf3f82 100%);
+        color: white !important;
+        border-radius: 12px;
+        border: none;
+        font-weight: 700;
+    }
+
+    .stLinkButton a:hover {
+        background: linear-gradient(135deg, #cf3f82 0%, #bb2f70 100%);
+        color: white !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -366,7 +414,7 @@ categories_used = len(set(p["category"] for p in PROJECTS))
 
 st.markdown(f"""
 <div class="hero">
-    <h1>Portafolio de aplicaciones en Streamlit</h1>
+    <h1>Portafolio de aplicaciones en Streamlit ♡</h1>
     <p>
         Esta página reúne proyectos desarrollados en Streamlit enfocados en visión por computador,
         texto, dibujo, voz e integración con MQTT. El objetivo es mostrar distintas exploraciones
